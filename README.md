@@ -30,17 +30,17 @@ Um blog simples criado com Django, hospedado no GitHub. Este projeto fornece uma
 
   Execute as migrações para configurar o banco de dados:
 
-   ```bash
-    python manage.py makemigrations
-    python manage.py migrate
+    ```bash
+     python manage.py makemigrations
+     python manage.py migrate
 
 
 5. **Inicie o servidor de desenvolvimento:**
 
    ```bash
-   python manage.py runserver
+    python manage.py runserver
 
-   O blog estará disponível em http://127.0.0.1:8000/.
+    O blog estará disponível em http://127.0.0.1:8000/.
 
 6. **Estrutura de Pastas:**
    ```bash
