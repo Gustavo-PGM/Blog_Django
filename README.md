@@ -44,7 +44,8 @@ Um blog simples criado com Django. Este projeto fornece uma base sólida para cr
 
 6. **Estrutura de Pastas:**
    ```bash
-    blog/: Código do blog, incluindo modelos, visualizações e URLs.
+    core/: Código do sistema, incluindo configurações e URLs.
+    app/: Código do sistema, incluindo modelos, visualizações e URLs.
     static/: Arquivos estáticos como CSS, JavaScript e imagens.
     media/: Arquivos carregados pelo usuário, como imagens de postagens.
     templates/: Templates HTML usados para renderizar as páginas.
