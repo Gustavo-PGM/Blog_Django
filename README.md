@@ -56,7 +56,3 @@ Contato
 Se tiver dúvidas ou precisar de ajuda, abra uma issue no GitHub ou entre em contato com gustavo.cavalcante.gomes06@gmail.com.
 
 Esse `README.md` cobre a instalação, estrutura do projeto, e como contribuir. Você pode ajustar conforme necessário para se adequar aos detalhes específicos do seu projeto.
-
-
-   
-
