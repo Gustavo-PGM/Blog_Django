@@ -18,8 +18,8 @@ Um blog simples criado com Django, hospedado no GitHub. Este projeto fornece uma
 2. **Crie um ambiente virtual e ative-o (opcional, mas recomendado):**
 
    ```bash
-  python -m venv venv
-  source venv/bin/activate  # No Windows, use `venv\Scripts\activate`
+   python -m venv venv
+   source venv/bin/activate  # No Windows, use `venv\Scripts\activate`
 
 3. **Instale as dependências:**
 
