@@ -28,7 +28,7 @@ Um blog simples criado com Django, hospedado no GitHub. Este projeto fornece uma
 
 4. **Configure o banco de dados:**
 
-  Execute as migrações para configurar o banco de dados:
+   Execute as migrações para configurar o banco de dados:
 
     ```bash
      python manage.py makemigrations
