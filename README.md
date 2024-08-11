@@ -30,7 +30,7 @@ Um blog simples criado com Django, hospedado no GitHub. Este projeto fornece uma
 
   Execute as migrações para configurar o banco de dados:
 
-    ```bash
+   ```bash
     python manage.py makemigrations
     python manage.py migrate
 
