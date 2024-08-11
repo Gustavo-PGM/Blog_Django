@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+
+{% block title %}Detalhes do Post{% endblock %}
+
+{% block favicon %}https://imgs.search.brave.com/lDGzC2vnoKqd9t3xTJm56LaEl_2WMuSLgqnbB_-MBKE/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/aHVic3BvdC5jb20v/aHViZnMvd3JpdGlu/Zy1ibG9nLXBvc3Qt/dGVtcGxhdGUuanBn{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <h1 class="mb-4">{{ post.titulo }}</h1>
+
+    <div class="mb-4 text-muted">
+        <p>Criado em: {{ post.criada_em }}</p>
+        <p>Última atualização em: {{ post.atualizada_em }}</p>
+    </div>
+
+    <div class="mb-4">
+        <img src="{{ post.imagens.url }}" class="img-fluid rounded shadow-sm" alt="{{ post.titulo }}">
+    </div>
+
+    <div class="mb-4">
+        <p>{{ post.texto|safe }}</p>
+    </div>
+
+    <div class="mb-4">
+        <h2 class="mb-3">Escreva um Comentário Abaixo</h2>
+        <form action="{% url 'comentarios' post.id %}" method="POST">
+            {% csrf_token %}
+            <div class="mb-3">
+                <label for="nome" class="form-label">Nome:</label>
+                <input type="text" id="nome" name="nome" class="form-control" placeholder="Digite seu nome">
+            </div>
+
+            <div class="mb-3">
+                <label for="email" class="form-label">Email:</label>
+                <input type="email" id="email" name="email" class="form-control" placeholder="Digite seu email">
+                <small class="form-text">Por favor, insira um e-mail válido com o domínio <code>@gmail.com</code>, caso contrário, ocorrerá um erro.</small>
+            </div>
+
+            <div class="mb-3">
+                <label for="comentario" class="form-label">Comentário:</label>
+                <textarea id="comentario" name="comentario" class="form-control" rows="4" placeholder="Digite seu comentário"></textarea>
+            </div>
+
+            <div class="mb-3">
+                <button type="submit" class="btn btn-primary">Enviar Comentário</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="mb-4">
+        <h3>Comentários</h3>
+        {% for coment in comentarios %}
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">{{ coment.nome }}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">{{ coment.criado_em }}</h6>
+                    <p class="card-text">{{ coment.comentario }}</p>
+                </div>
+            </div>
+        {% empty %}
+            <p>Não há comentários ainda.</p>
+        {% endfor %}
+    </div>
+
+    <div class="mb-4">
+        <a href="{% url 'postagens' %}" class="btn btn-secondary">Voltar à lista de postagens</a>
+    </div>
+</div>
+{% endblock %}

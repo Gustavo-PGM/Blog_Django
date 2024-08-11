@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block title %}Postagens{% endblock %}
+{% block favicon %}https://imgs.search.brave.com/lDGzC2vnoKqd9t3xTJm56LaEl_2WMuSLgqnbB_-MBKE/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/aHVic3BvdC5jb20v/aHViZnMvd3JpdGlu/Zy1ibG9nLXBvc3Qt/dGVtcGxhdGUuanBn{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+
+    <div class="row mb-4">
+        <div class="col-12">
+            <h2 class="text-center mb-4">Postagens Recentes</h2>
+        </div>
+            {% for post in posts %}
+                <div class="col-md-4 mb-4">
+                    <div class="card shadow-sm border-dark">
+                        <img src="{{ post.imagens.url }}" class="card-img-top img-fluid" alt="{{ post.titulo }}">
+
+                        <div class="card-body">
+                            <h5 class="card-title">{{ post.titulo }}</h5>
+                            <p class="card-text">
+                                {{ post.texto|safe|slice:"120" }}{% if post.texto|length > 100%}...{% endif %}
+                            </p>
+                            <a href="{% url 'detalhes' post.id %}" class="btn btn-primary">Mais Detalhes</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+    </div>
+
+    <div class="row mb-4">
+        <div class="col-12">
+            <h2 class="text-center mb-4">Categorias de Postagens</h2>
+        </div>
+        {% if categorias %}
+            {% for categoria in categorias %}
+                <div class="col-md-4 mb-4">
+                    <div class="card shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <a href="{% url 'grupos' categoria.id %}" class="text-decoration-none text-dark">
+                                    {{ categoria.titulo }}
+                                </a>
+                            </h5>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        {% else %}
+            <div class="col-12">
+                <p class="text-center">Nenhuma categoria encontrada.</p>
+            </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

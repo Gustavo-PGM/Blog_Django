@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}Detalhes da Categoria{% endblock %}
+{% block favicon %}https://imgs.search.brave.com/lDGzC2vnoKqd9t3xTJm56LaEl_2WMuSLgqnbB_-MBKE/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/aHVic3BvdC5jb20v/aHViZnMvd3JpdGlu/Zy1ibG9nLXBvc3Qt/dGVtcGxhdGUuanBn{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <!-- Seção de Postagens -->
+    <div class="row mb-4">
+        <div class="col-12">
+            <h2 class="text-center mb-4">Postagens da Categoria: {{ categorias.titulo }}</h2>
+        </div>
+
+                <div class="col-md-4 mb-4">
+                    <div class="card shadow-sm">
+                        <img src="{{ posta.imagens.url }}" class="card-img-top img-fluid" alt="{{ posta.titulo }}">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ posta.titulo }}</h5>
+                            <p class="card-text">
+                                {{ posta.descricao|slice:":100" }}{% if posta.descricao|length > 100 %}...{% endif %}
+                            </p>
+                            <a href="{% url 'detalhes' posta.id %}" class="btn btn-primary">Mais Detalhes</a>
+                        </div>
+                    </div>
+                </div>
+    </div>
+</div>
+{% endblock %}
