@@ -1,6 +1,6 @@
 # Django Blog
 
-Um blog simples criado com Django, hospedado no GitHub. Este projeto fornece uma base sólida para criar um blog com funcionalidades básicas de publicação e gerenciamento de posts.
+Um blog simples criado com Django. Este projeto fornece uma base sólida para criar um blog com funcionalidades básicas de publicação e gerenciamento de posts.
 
 ## Pré-requisitos
 
